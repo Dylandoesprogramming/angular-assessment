@@ -1,7 +1,7 @@
 <!--Product Image-->
 
 <!--Product Image click collapse the image-->
-<a class="product-grid__product" ng-init="isImageClicked = true"  id="productImage">
+<a class="product-grid__product" ng-init="isImageClicked = true" id="productImage">
     <img ng-show="isImageClicked" ng-click="isImageClicked = !isImageClicked" class="product-grid__img" sizes="(min-width: 960px) 33vw, (min-width: 769px) 50vw, 100vw" ng-src="{{curProduct.image}}" alt="">
 </a>
 <a class="product-grid__product" ng-show="!isImageClicked">
