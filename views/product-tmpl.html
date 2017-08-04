@@ -1,11 +1,11 @@
 <!--Product Image-->
 
 <!--Product Image click collapse the image-->
-<a class="product-grid__product" ng-init="isImageClicked = false" ng-show="isImageClicked" id="productImage">
-    <img class="product-grid__img" sizes="(min-width: 960px) 33vw, (min-width: 769px) 50vw, 100vw" ng-src="{{product.image}}" alt="">
+<a class="product-grid__product" ng-init="isImageClicked = true"  id="productImage">
+    <img ng-show="isImageClicked" ng-click="isImageClicked = !isImageClicked" class="product-grid__img" sizes="(min-width: 960px) 33vw, (min-width: 769px) 50vw, 100vw" ng-src="{{curProduct.image}}" alt="">
 </a>
-<a class="product-grid__product">
-    <button type="button" ng-click="isImageClicked= !isImageClicked">show image</button>
+<a class="product-grid__product" ng-show="!isImageClicked">
+    <button type="button" ng-if( "isImageClicked") ng-click="isImageClicked = !isImageClicked">show image</button>
 </a>
 
 <!--Product Meta-->
@@ -13,17 +13,17 @@
     <!--Title click Should redirect to the product-details section. remember to pass along the product id so you can make an api call
         to get the specific product details-->
     <h3 class="product-grid__name">
-        <a ui-sref="product({id:product.id})">
-            {{product.title}}
+        <a ui-sref="product({id:curProduct.id})">
+            {{curProduct.title}}
         </a>
     </h3>
 
     <!--Product Description-->
     <h4 class="product-grid__sub">
-        {{product.desc}}
+        {{curProduct.desc}}
     </h4>
 
     <!--Product Price-->
     <div class="product-grid__price">
-        {{product.price}} </div>
+        {{curProduct.price}} </div>
 </div>
